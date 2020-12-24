@@ -121,11 +121,13 @@
             // 
             // lRank
             // 
-            resources.ApplyResources(this.lRank, "lRank");
-            this.lRank.BackColor = System.Drawing.Color.Transparent;
+            this.lRank.BackColor = System.Drawing.Color.Black;
             this.lRank.CausesValidation = false;
+            this.lRank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.lRank, "lRank");
             this.lRank.ForeColor = System.Drawing.SystemColors.Window;
             this.lRank.Name = "lRank";
+            this.lRank.UseCompatibleTextRendering = true;
             this.lRank.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MabiCooker_RatioView_MouseDown);
             this.lRank.MouseLeave += new System.EventHandler(this.CookRatioView_deactive);
             this.lRank.MouseHover += new System.EventHandler(this.CookRatioView_active);
@@ -133,7 +135,7 @@
             // 
             // tiRatioView
             // 
-            this.tiRatioView.Interval = 75;
+            this.tiRatioView.Interval = 20;
             this.tiRatioView.Tick += new System.EventHandler(this.tiRatioView_Tick);
             // 
             // lCloseRatio

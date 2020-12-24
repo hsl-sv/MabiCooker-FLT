@@ -11,7 +11,7 @@ namespace MabiCooker2
 {
     public partial class CookRatioView : Form
     {
-        private const int STUFF_FLOW_SIZE = 175;
+        private const int STUFF_FLOW_SIZE = 150;
 
         public bool NoticeInfo = true;
         public static Cook SelectedCook;
@@ -59,12 +59,18 @@ namespace MabiCooker2
             // lStuffs.Location = new Point(lName.Location.X + lName.Width + 5, 15);
 
             lStuffs.Text = SelectedCook.getStuffForString();
+
+            if (lStuffs.Width > STUFF_FLOW_SIZE)
+            {
+                lStuffs.Width = STUFF_FLOW_SIZE;
+            }
+
             lRankName.Text = Enum.GetName(def, Cook.checkRank(SelectedCook.getRank()));
-            //lRankName.Text = Rank.getRankName(RankId);
-            //lRank.Text = Rank.getRankChar(RankId).ToString();
+            lRankName.Text = Rank.checkRank(RankId).ToString();
+            lRank.Text = Rank.checkRank(RankId).ToString();
             lName.Text = SelectedCook.getName();
             lName.Location = new Point(lRankName.Location.X + lRankName.Width, lName.Location.Y);
-            //lRank.Text = SelectedCook.getRank().ToString();
+            lRank.Text = SelectedCook.getRank().ToString();
             iBuffer = SelectedCook.getRatio();
             if (iBuffer[0] == bar_width)
             {
@@ -111,8 +117,11 @@ namespace MabiCooker2
             #endregion
 
             lFavCheck_Icon(false);
-            lStuffs.Location = new Point(20, lStuffs.Location.Y);
-            if (lStuffs.Width > STUFF_FLOW_SIZE) tiRatioView.Enabled = true;
+            lStuffs.Location = new Point(flTitle.Location.X, flTitle.Location.Y + 18);
+            if (lStuffs.Width > STUFF_FLOW_SIZE)
+            {
+                tiRatioView.Enabled = true;
+            }
             else tiRatioView.Enabled = false;
             this.PrintRatio();
         }
@@ -216,12 +225,13 @@ namespace MabiCooker2
         }
         private void tiRatioView_Tick(object sender, EventArgs e)
         {
-            // 이 라벨 사이즈가 165 이상이게 되면 동작.
-            if (lStuffs.Width > STUFF_FLOW_SIZE)
+            if (lStuffs.Width >= STUFF_FLOW_SIZE)
             {
-                // lStuffs.Location.X > 20 - (lStuffs.Width - 165)
-                if (lStuffs.Location.X == STUFF_FLOW_SIZE + 15 - lStuffs.Width) RightLeft = false;
-                else if (lStuffs.Location.X == 25) RightLeft = true;
+                if (lStuffs.Location.X < (0 - lStuffs.Width + tableLayoutPanel1.Width + flTitle.Width + lRank.Width - 10))
+                    RightLeft = false;
+                else if (lStuffs.Location.X > tableLayoutPanel1.Width + 5)
+                    RightLeft = true;
+
                 if (RightLeft)
                     lStuffs.Location = new Point(lStuffs.Location.X - 1, lStuffs.Location.Y);
                 else

@@ -29,3 +29,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 /.vs/MabiCooker2/v15/Server/sqlite3
 /.vs
+/packages
+/FodyWeavers.xsd
+/FodyWeavers.xml
+/packages.config

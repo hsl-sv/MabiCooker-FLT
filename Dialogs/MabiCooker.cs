@@ -249,7 +249,12 @@ namespace MabiCooker2
                 //* 20100103~ // Version 2.1 */
                 // SIMPLE IS BEST!!! //
                 CookReader = new StreamReader("cook.dat");
-                while ((lineBuffer = CookReader.ReadLine()) != null) CookData.Add(new Cook(lineBuffer));
+                while ((lineBuffer = CookReader.ReadLine()) != null)
+                {
+                    // Added line skip
+                    if (!(lineBuffer.Contains("//") || String.IsNullOrEmpty(lineBuffer)))
+                        CookData.Add(new Cook(lineBuffer));
+                }
                 CookReader.Close();
                 CookReader = new StreamReader("favcook.dat");
                 while ((lineBuffer = CookReader.ReadLine()) != null)

@@ -238,7 +238,7 @@
     <value>True</value>
   </data>
   <data name="lStuffs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 30</value>
+    <value>25, 31</value>
   </data>
   <data name="lStuffs.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -297,20 +297,17 @@
   <data name="&gt;&gt;lRankName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lRank.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="lRank.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 24pt, style=Bold, Italic</value>
   </data>
   <data name="lRank.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 8</value>
+    <value>202, 10</value>
   </data>
   <data name="lRank.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lRank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 40</value>
+    <value>30, 40</value>
   </data>
   <data name="lRank.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -403,7 +400,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
+    <value>-1, 9</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -430,7 +427,7 @@
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lCloseRatio" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lFavCheck" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="flTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 11</value>
+    <value>22, 11</value>
   </data>
   <data name="flTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -457,7 +454,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>232, 48</value>
+    <value>232, 51</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>맑은 고딕, 8.25pt</value>
