@@ -119,7 +119,12 @@
             resources.GetString("cbRankSelector.Items7"),
             resources.GetString("cbRankSelector.Items8"),
             resources.GetString("cbRankSelector.Items9"),
-            resources.GetString("cbRankSelector.Items10")});
+            resources.GetString("cbRankSelector.Items10"),
+            resources.GetString("cbRankSelector.Items11"),
+            resources.GetString("cbRankSelector.Items12"),
+            resources.GetString("cbRankSelector.Items13"),
+            resources.GetString("cbRankSelector.Items14"),
+            resources.GetString("cbRankSelector.Items15")});
             this.cbRankSelector.Name = "cbRankSelector";
             this.cbRankSelector.SelectedIndexChanged += new System.EventHandler(this.cbRankSelector_SelectedIndexChanged);
             // 

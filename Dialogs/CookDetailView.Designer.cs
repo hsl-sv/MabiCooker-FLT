@@ -38,7 +38,6 @@
             this.lStuffTwo = new System.Windows.Forms.LinkLabel();
             this.lStuffOne = new System.Windows.Forms.LinkLabel();
             this.lRank = new System.Windows.Forms.Label();
-            this.lPicture = new System.Windows.Forms.PictureBox();
             this.tiCheckAlert = new System.Windows.Forms.Timer(this.components);
             this.pAlertShowing = new System.Windows.Forms.StatusStrip();
             this.lMessage = new System.Windows.Forms.ToolStripStatusLabel();
@@ -49,14 +48,12 @@
             this.bModFav = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.pDisplayInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lPicture)).BeginInit();
             this.pAlertShowing.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pDisplayInfo
             // 
-            resources.ApplyResources(this.pDisplayInfo, "pDisplayInfo");
             this.pDisplayInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pDisplayInfo.Controls.Add(this.lStuffThreePrice);
             this.pDisplayInfo.Controls.Add(this.lStuffTwoPrice);
@@ -65,6 +62,7 @@
             this.pDisplayInfo.Controls.Add(this.lStuffTwo);
             this.pDisplayInfo.Controls.Add(this.lStuffOne);
             this.pDisplayInfo.Controls.Add(this.lRank);
+            resources.ApplyResources(this.pDisplayInfo, "pDisplayInfo");
             this.pDisplayInfo.Name = "pDisplayInfo";
             // 
             // lStuffThreePrice
@@ -126,13 +124,6 @@
             this.lRank.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lRank.Name = "lRank";
             // 
-            // lPicture
-            // 
-            resources.ApplyResources(this.lPicture, "lPicture");
-            this.lPicture.InitialImage = global::MabiCooker2.Properties.Resources.Blank;
-            this.lPicture.Name = "lPicture";
-            this.lPicture.TabStop = false;
-            // 
             // tiCheckAlert
             // 
             this.tiCheckAlert.Interval = 3000;
@@ -140,22 +131,22 @@
             // 
             // pAlertShowing
             // 
-            resources.ApplyResources(this.pAlertShowing, "pAlertShowing");
             this.pAlertShowing.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lMessage});
+            resources.ApplyResources(this.pAlertShowing, "pAlertShowing");
             this.pAlertShowing.Name = "pAlertShowing";
             // 
             // lMessage
             // 
-            resources.ApplyResources(this.lMessage, "lMessage");
             this.lMessage.Name = "lMessage";
+            resources.ApplyResources(this.lMessage, "lMessage");
             // 
             // lEffects
             // 
-            resources.ApplyResources(this.lEffects, "lEffects");
             this.lEffects.BackColor = System.Drawing.SystemColors.Info;
             this.lEffects.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lEffects.DetectUrls = false;
+            resources.ApplyResources(this.lEffects, "lEffects");
             this.lEffects.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lEffects.Name = "lEffects";
             this.lEffects.ReadOnly = true;
@@ -163,9 +154,9 @@
             // 
             // bBack
             // 
-            resources.ApplyResources(this.bBack, "bBack");
             this.bBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bBack.Image = global::MabiCooker2.Properties.Resources.Back;
+            resources.ApplyResources(this.bBack, "bBack");
             this.bBack.Name = "bBack";
             this.bBack.Click += new System.EventHandler(this.bBack_Click);
             this.bBack.MouseLeave += new System.EventHandler(this.reset_message_bar);
@@ -173,14 +164,14 @@
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // bDisplayRatio
             // 
-            resources.ApplyResources(this.bDisplayRatio, "bDisplayRatio");
             this.bDisplayRatio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bDisplayRatio.Image = global::MabiCooker2.Properties.Resources.Ratio;
+            resources.ApplyResources(this.bDisplayRatio, "bDisplayRatio");
             this.bDisplayRatio.Name = "bDisplayRatio";
             this.bDisplayRatio.Click += new System.EventHandler(this.bDisplayRatio_Click);
             this.bDisplayRatio.MouseLeave += new System.EventHandler(this.reset_message_bar);
@@ -188,9 +179,9 @@
             // 
             // bModFav
             // 
-            resources.ApplyResources(this.bModFav, "bModFav");
             this.bModFav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bModFav.Image = global::MabiCooker2.Properties.Resources.Favorite;
+            resources.ApplyResources(this.bModFav, "bModFav");
             this.bModFav.Name = "bModFav";
             this.bModFav.Click += new System.EventHandler(this.bModFav_Click);
             this.bModFav.MouseLeave += new System.EventHandler(this.reset_message_bar);
@@ -198,12 +189,12 @@
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bBack,
             this.toolStripSeparator2,
             this.bDisplayRatio,
             this.bModFav});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
             // CookDetailView
@@ -211,7 +202,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lEffects);
-            this.Controls.Add(this.lPicture);
             this.Controls.Add(this.pAlertShowing);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pDisplayInfo);
@@ -221,7 +211,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CookDetailView_FormClosed);
             this.pDisplayInfo.ResumeLayout(false);
             this.pDisplayInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lPicture)).EndInit();
             this.pAlertShowing.ResumeLayout(false);
             this.pAlertShowing.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -242,7 +231,6 @@
         private System.Windows.Forms.Label lStuffThreePrice;
         private System.Windows.Forms.Label lStuffTwoPrice;
         private System.Windows.Forms.Label lStuffOnePrice;
-        private System.Windows.Forms.PictureBox lPicture;
         private System.Windows.Forms.StatusStrip pAlertShowing;
         private System.Windows.Forms.RichTextBox lEffects;
         private System.Windows.Forms.ToolStripStatusLabel lMessage;
