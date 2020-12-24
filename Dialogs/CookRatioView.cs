@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using CookImplement;
 
@@ -11,7 +12,7 @@ namespace MabiCooker2
 {
     public partial class CookRatioView : Form
     {
-        private const int STUFF_FLOW_SIZE = 150;
+        private const int STUFF_FLOW_SIZE = 180;
 
         public bool NoticeInfo = true;
         public static Cook SelectedCook;
@@ -21,15 +22,10 @@ namespace MabiCooker2
         private Point mousePoint;
         private ListBox FavListView;
         private MabiCooker MainWindow;
+        private ToolTip tooltip = new ToolTip();
 
         private int initial_height;
-        private int default_opacity = 50;
-        private int hoverd_opacity = 75;
-        private int fade_sleep_length = 5;
-
         private int bar_width = 232;
-
-        private ToolTip tooltip = new ToolTip();
 
         public CookRatioView(MabiCooker Main, ListBox FavView)
         {
@@ -43,12 +39,13 @@ namespace MabiCooker2
 
             this.FavListView = FavView;
             this.MainWindow = Main;
+            tooltip.ShowAlways = true;
             initial_height = this.Size.Height;
             tooltip.SetToolTip(lCloseRatio, Properties.Resources.StrClose);
         }
+
         public void UpdateData()
         {
-            // 요리 재료 라벨 사이즈 165
             if (SelectedCook == null)
             {
                 return;
@@ -59,12 +56,6 @@ namespace MabiCooker2
             // lStuffs.Location = new Point(lName.Location.X + lName.Width + 5, 15);
 
             lStuffs.Text = SelectedCook.getStuffForString();
-
-            if (lStuffs.Width > STUFF_FLOW_SIZE)
-            {
-                lStuffs.Width = STUFF_FLOW_SIZE;
-            }
-
             lRankName.Text = Enum.GetName(def, Cook.checkRank(SelectedCook.getRank()));
             lRankName.Text = Rank.checkRank(RankId).ToString();
             lRank.Text = Rank.checkRank(RankId).ToString();
@@ -76,8 +67,7 @@ namespace MabiCooker2
             {
                 lName.Text += Properties.Resources.StrCannotCook;
             }
-
-
+            
             #region bar
             String[] StuffName = SelectedCook.getStuff();
 
@@ -99,10 +89,20 @@ namespace MabiCooker2
             pbStuffOne.Width = iBufferRemap[0];
             tooltip.SetToolTip(pbStuffOne, String.Format("{0} ({1})", StuffName[0], percentage(iBuffer[0], 100)));
             pbStuffTwo.Location = new Point(iBufferRemap[0], 0);
-            pbStuffTwo.Width = iBufferRemap[1];
-            tooltip.SetToolTip(pbStuffTwo, String.Format("{0} ({1})", StuffName[1], percentage(iBuffer[1], 100)));
-            pbStuffThree.Location = new Point((int)Math.Round(fBuffer[0] + fBuffer[1]), 0);
 
+            try
+            {
+                pbStuffTwo.Width = iBufferRemap[1];
+                tooltip.SetToolTip(pbStuffTwo, String.Format("{0} ({1})", StuffName[1], percentage(iBuffer[1], 100)));
+                pbStuffThree.Location = new Point((int)Math.Round(fBuffer[0] + fBuffer[1]), 0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                pbStuffTwo.Width = 0;
+                tooltip.SetToolTip(pbStuffTwo, "");
+            }
+            
             try
             {
                 pbStuffThree.Width = iBufferRemap[2];
@@ -139,7 +139,6 @@ namespace MabiCooker2
         }
         private void lFavCheck_Icon(bool hover)
         {
-            fader(false);
             if (MainWindow.FavList.Contains(DataIndex) == true)
             {
                 if (hover)
@@ -155,29 +154,6 @@ namespace MabiCooker2
                 else
                     lFavCheck.Image = Properties.Resources.Favorite;
                 tooltip.SetToolTip(lFavCheck, Properties.Resources.StrFavorite);
-            }
-        }
-        private void fader(bool isFaded)
-        {
-            int initial_opacity = (int)this.Opacity * 100;
-
-            if (!isFaded)
-            {
-                // Fade in
-                for (int i = default_opacity; i <= hoverd_opacity; i++)
-                {
-                    this.Opacity = (double)i / 100;
-                    System.Threading.Thread.Sleep(fade_sleep_length);
-                }
-            }
-            else
-            {
-                // Fade out
-                for (int i = hoverd_opacity; i >= default_opacity; i--)
-                {
-                    this.Opacity = (double)i / 100;
-                    System.Threading.Thread.Sleep(fade_sleep_length);
-                }
             }
         }
 
@@ -202,6 +178,12 @@ namespace MabiCooker2
         private void CookRatioView_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape) this.Visible = false;
+
+            // Move CookRatioView with arrows
+            if (e.KeyCode == Keys.Up) this.Location = new Point(this.Location.X, this.Location.Y - 1);
+            else if (e.KeyCode == Keys.Down) this.Location = new Point(this.Location.X, this.Location.Y + 1);
+            else if (e.KeyCode == Keys.Left) this.Location = new Point(this.Location.X - 1, this.Location.Y);
+            else if (e.KeyCode == Keys.Right) this.Location = new Point(this.Location.X + 1, this.Location.Y);
         }
         private void lCloseRatio_Click(object sender, EventArgs e)
         {
@@ -264,21 +246,11 @@ namespace MabiCooker2
 
         private void CookRatioView_active(object sender, EventArgs e)
         {
-            int initial_opacity = (int)this.Opacity * 100;
-            // Fade in
-            if (initial_opacity != default_opacity)
-            {
-                fader(false);
-            }
+            //tooltip.Active = true;
         }
         private void CookRatioView_deactive(object sender, EventArgs e)
         {
-            int initial_opacity = (int)this.Opacity * 100;
-            // Fade out
-            if (initial_opacity != hoverd_opacity)
-            {
-                fader(true);
-            }
+            //tooltip.Active = false;
         }
 
         private void lCloseRatio_MouseHover(object sender, EventArgs e)

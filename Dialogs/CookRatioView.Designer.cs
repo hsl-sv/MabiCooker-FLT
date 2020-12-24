@@ -57,7 +57,7 @@
             resources.ApplyResources(this.pbStuffOne, "pbStuffOne");
             this.pbStuffOne.Name = "pbStuffOne";
             this.pbStuffOne.TabStop = false;
-            this.pbStuffOne.Click += new System.EventHandler(this.pbStuffOne_Click);
+            this.pbStuffOne.DoubleClick += new System.EventHandler(this.pbStuffOne_Click);
             this.pbStuffOne.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MabiCooker_RatioView_MouseDown);
             this.pbStuffOne.MouseLeave += new System.EventHandler(this.CookRatioView_deactive);
             this.pbStuffOne.MouseHover += new System.EventHandler(this.CookRatioView_active);
@@ -69,7 +69,7 @@
             resources.ApplyResources(this.pbStuffTwo, "pbStuffTwo");
             this.pbStuffTwo.Name = "pbStuffTwo";
             this.pbStuffTwo.TabStop = false;
-            this.pbStuffTwo.Click += new System.EventHandler(this.pbStuffOne_Click);
+            this.pbStuffTwo.DoubleClick += new System.EventHandler(this.pbStuffOne_Click);
             this.pbStuffTwo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MabiCooker_RatioView_MouseDown);
             this.pbStuffTwo.MouseLeave += new System.EventHandler(this.CookRatioView_deactive);
             this.pbStuffTwo.MouseHover += new System.EventHandler(this.CookRatioView_active);
@@ -81,7 +81,7 @@
             resources.ApplyResources(this.pbStuffThree, "pbStuffThree");
             this.pbStuffThree.Name = "pbStuffThree";
             this.pbStuffThree.TabStop = false;
-            this.pbStuffThree.Click += new System.EventHandler(this.pbStuffOne_Click);
+            this.pbStuffThree.DoubleClick += new System.EventHandler(this.pbStuffOne_Click);
             this.pbStuffThree.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MabiCooker_RatioView_MouseDown);
             this.pbStuffThree.MouseLeave += new System.EventHandler(this.CookRatioView_deactive);
             this.pbStuffThree.MouseHover += new System.EventHandler(this.CookRatioView_active);
@@ -193,7 +193,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CookRatioView";
-            this.Opacity = 0.5D;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.TopMost = true;

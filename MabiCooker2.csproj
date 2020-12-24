@@ -73,7 +73,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CookImplement, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CookImplement, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>CookImplement-master\bin\Release\CookImplement.dll</HintPath>
     </Reference>
