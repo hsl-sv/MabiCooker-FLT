@@ -325,32 +325,23 @@ namespace CookImplement
                                 break;
                             }
                         case 1:
-                            buffer.Append("체력 ");
-                            break;
+                            buffer.Append("체력 "); break;
                         case 2:
-                            buffer.Append("지력 ");
-                            break;
+                            buffer.Append("지력 "); break;
                         case 3:
-                            buffer.Append("솜씨 ");
-                            break;
+                            buffer.Append("솜씨 "); break;
                         case 4:
-                            buffer.Append("의지 ");
-                            break;
+                            buffer.Append("의지 "); break;
                         case 5:
-                            buffer.Append("행운 ");
-                            break;
+                            buffer.Append("행운 "); break;
                         case 6:
-                            buffer.Append("최대생명력 ");
-                            break;
+                            buffer.Append("최대생명력 "); break;
                         case 7:
-                            buffer.Append("최대마나 ");
-                            break;
+                            buffer.Append("최대마나 "); break;
                         case 8:
-                            buffer.Append("최대스태미너 ");
-                            break;
+                            buffer.Append("최대스태미너 "); break;
                         case 9:
-                            buffer.Append("스태미너 회복도 ");
-                            break;
+                            buffer.Append("스태미너 회복도 "); break;
                         case 10:
                             if (cEffect[i] > 0)
                                 buffer.Append("다이어트 효과");
@@ -493,7 +484,8 @@ namespace CookImplement
             케이틴 = 0, 글리니스 = 1, 세나 = 2, 글루아스 = 3, 리리스 = 4,
             에피 = 5, 제니퍼 = 6, 루와이 = 7, 피에릭 = 8, 글라니테스 = 9,
             고든 = 10, 프레이저 = 11, 반스트 = 12, 채집 = 13, 요리 = 14, 
-            루카스 = 15, 카독 = 16, 아닉 = 17, 바날렌 = 18, 배리 = 19
+            루카스 = 15, 카독 = 16, 아닉 = 17, 바날렌 = 18, 배리 = 19,
+            재료수집 = 20
         };
         private String Name;
         private int Price;

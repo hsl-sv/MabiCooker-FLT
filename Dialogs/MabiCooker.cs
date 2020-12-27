@@ -485,78 +485,9 @@ namespace MabiCooker2
         }
         private void lCopyrites_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            /*
-			if (File.Exists("supervisor.tag"))
-			{
-                for (int i = 0; i < CookData.Count; i++)
-                {
-                    CookImplement.CookData buffer = new CookData(CookData, StuffData, i);
-
-                    int[] sRatio = buffer.cook.getRatio();
-                    int[] cEffect = buffer.cook.getEffectArray();
-                    bool cSEffectbool = false;
-                    if(buffer.cook.SEffect != "") cSEffectbool = true;
-
-                    string query = String.Format("INSERT INTO `mabicooker`.`mc_cooks` "
-                        + "(`name`, `rank`, `ratio_1`, `ratio_2`, `ratio_3`, `effect_0`, `effect_1`, `effect_2`, `effect_3`, `effect_4`, `effect_5`, `effect_6`, `effect_7`, `effect_8`, `effect_9`, `effect_10`, `isSpecial`, `effect_special`, `stuff_1`, `stuff_2`, `stuff_3`) "
-                        + "VALUES ('{0}', '{1}', {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, '{17}', {18}, {19}, {20})",
-                        buffer.cook.Name, buffer.cook.Rank, 
-                        sRatio[0], sRatio[1], sRatio[2], 
-                        cEffect[0], cEffect[1], cEffect[2], cEffect[3], cEffect[4], cEffect[5], cEffect[6], cEffect[7], cEffect[8], cEffect[9], cEffect[10],
-                        cSEffectbool, buffer.cook.SEffect, buffer.stuffs[0]);
-                }
-			}
-			
-            if (File.Exists("supervisor.tag"))
-            {
-                // File.Copy("cook.dat", "cook_prev_ver.dat");
-                // StreamWriter data = new StreamWriter("cook.dat");
-                StreamWriter data = new StreamWriter("stuff_anlysis.dat");
-                List<String> stuffs = new List<String>();
-                Action<String> writefile = data.WriteLine;
-                for (int i = 0; i < CookData.Count; i++)
-                {
-                    string[] buffer = CookData[i].Stuff;
-                    for (int k = 0; k < buffer.Length; k++)
-                        if (!stuffs.Contains(buffer[k])) stuffs.Add(buffer[k]);
-                }
-                stuffs.Sort();
-                stuffs.ForEach(writefile);
-                // MessageBox.Show("데이터 정렬이 완료 되었습니다.", "관리자 알림");
-                MessageBox.Show("재료 데이터 출력이 완료 되었습니다.", "관리자 알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                data.Close();
-            }
-            else if (File.Exists("listclear.tag") && !File.Exists("CookData.xml"))
-            {
-                DataTable tblCook = new DataTable("tblCook");
-                DataTable tblStuff = new DataTable("tblStuff");
-                DataColumn col;
-                DataRow row;
-
-                col = new DataColumn("No", typeof(int));
-                col.Unique = true; col.AutoIncrement = true; tblCook.Columns.Add(col);
-                col = new DataColumn("Name", typeof(string));
-                col.Unique = true; tblCook.Columns.Add(col);
-                col = new DataColumn("Rank", typeof(string));
-                col.MaxLength = 1; tblCook.Columns.Add(col);
-                col = new DataColumn("Stuff", typeof(string[]));
-                tblCook.Columns.Add(col);
-                col = new DataColumn("Ratio", typeof(int[]));
-                tblCook.Columns.Add(col);
-                col = new DataColumn("Effect", typeof(int[]));
-                tblCook.Columns.Add(col);
-                col = new DataColumn("SpecialEffect", typeof(string));
-                tblCook.Columns.Add(col);
-
-                col = new DataColumn("No", typeof(int));
-                col.Unique = true; col.AutoIncrement = true; tblStuff.Columns.Add(col);
-            }
-			
-            else
-            {*/
-            System.Diagnostics.Process.Start("http://dehol.kr");
+            System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo("https://github.com/deholic/MabiCooker");
+            System.Diagnostics.Process.Start(sInfo);
             return;
-            //}
         }
         private void MabiCooker_FormClosed(object sender, FormClosedEventArgs e)
         {

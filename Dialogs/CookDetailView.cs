@@ -54,6 +54,8 @@ namespace MabiCooker2
         public void UpdateData(int DataIndex, Cook Data)
         {   // MabiCooker Form 에서 같이 쓰이는 메소드. public
             //this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            int bar_width = 100;
+
             this.Selected = Data;
             this.DataIndex = DataIndex;
             if (this.ForTrace.Count == 0) bBack.Enabled = false;
@@ -61,7 +63,7 @@ namespace MabiCooker2
             lStuffOne.Text = (Data.getStuff())[0];
             lStuffTwo.Text = (Data.getStuff())[1];
             tiCheckAlert.Enabled = false;
-            if ((Data.getRatio())[0] == 230)
+            if ((Data.getRatio())[0] == bar_width)
             {
                 this.Text += Properties.Resources.StrCannotCook;
             }
@@ -82,6 +84,8 @@ namespace MabiCooker2
         }
         public void UpdateData(CookData Exchange)
         {
+            int bar_width = 100;
+
             // Initialize Text
             lStuffOne.Text = "";
             lStuffOnePrice.Text = "";
@@ -111,16 +115,18 @@ namespace MabiCooker2
                 {
                     lStuffTwo.Text = CookInfo.stuffs[1].sName;
                     CheckStuff(CookInfo.stuffs[1], lStuffTwo, lStuffTwoPrice);
+                    lStuffThree.Visible = true;
                 }
                 else
                 {
-                    lStuffTwo.Text = "Unknown Error";
+                    //lStuffTwo.Text = "Unknown Error";
                 }
 
-                if ((CookInfo.cook.getRatio())[0] == 230)
-                {
-                    this.Text += Properties.Resources.StrCannotCook;
-                }
+                //if ((CookInfo.cook.getRatio())[0] == bar_width)
+                //{
+                //    this.Text += Properties.Resources.StrCannotCook;
+                //}
+
                 if (CookInfo.stuffs[2] != null)
                 {
                     lStuffThree.Text = CookInfo.stuffs[2].sName;
@@ -130,7 +136,7 @@ namespace MabiCooker2
                 }
                 else
                 {
-                    lStuffThree.Text = "Unknown Error";
+                    //lStuffThree.Text = "Unknown Error";
                 }
 
                 bModFav_Icon();
@@ -219,7 +225,7 @@ namespace MabiCooker2
                 MainWindow.DeleteFavList(CookInfo.cIndex);
                 MainWindow.UpdateData(MainWindow.FavList, FavListView);
                 if (MabiCooker.RatioView != null) MabiCooker.RatioView.UpdateData();
-                pAlertShowing.BackColor = SystemColors.InactiveCaption;
+                //pAlertShowing.BackColor = SystemColors.InactiveCaption;
                 lMessage.Text = Properties.Resources.MsgFavoriteRemove;
                 tiCheckAlert.Enabled = true;
             }
@@ -228,7 +234,7 @@ namespace MabiCooker2
                 MainWindow.AddFavList(CookInfo.cIndex);
                 MainWindow.UpdateData(MainWindow.FavList, FavListView);
                 if (MabiCooker.RatioView != null) MabiCooker.RatioView.UpdateData();
-                pAlertShowing.BackColor = SystemColors.ActiveCaption;
+                //pAlertShowing.BackColor = SystemColors.ActiveCaption;
                 lMessage.Text = Properties.Resources.MsgFavoriteAdd;
                 tiCheckAlert.Enabled = true;
             }
@@ -249,7 +255,7 @@ namespace MabiCooker2
         private void tiCheckAlert_Tick(object sender, EventArgs e)
         {
             tiCheckAlert.Enabled = false;
-            pAlertShowing.BackColor = SystemColors.Control;
+            //pAlertShowing.BackColor = SystemColors.Control;
         }
         private void lStuffOne_MouseHover(object sender, EventArgs e)
         {
@@ -266,7 +272,7 @@ namespace MabiCooker2
         }
         private void lStuffTwo_MouseHover(object sender, EventArgs e)
         {
-            if (tiCheckAlert.Enabled == false)
+            if (tiCheckAlert.Enabled == false && CookInfo.stuffs[1] != null)
             {
                 String buffer = "";
                 for (int i = 0; i < CookInfo.stuffs[1].sSellingPoint.Count;)

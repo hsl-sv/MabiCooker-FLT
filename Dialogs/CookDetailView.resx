@@ -351,39 +351,6 @@
   <metadata name="tiCheckAlert.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="pAlertShowing.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>225, 15</value>
-  </metadata>
-  <data name="lMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 17</value>
-  </data>
-  <data name="lMessage.Text" xml:space="preserve">
-    <value>Message</value>
-  </data>
-  <data name="pAlertShowing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 121</value>
-  </data>
-  <data name="pAlertShowing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="pAlertShowing.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="pAlertShowing.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;pAlertShowing.Name" xml:space="preserve">
-    <value>pAlertShowing</value>
-  </data>
-  <data name="&gt;&gt;pAlertShowing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pAlertShowing.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pAlertShowing.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lEffects.Font" type="System.Drawing.Font, System.Drawing">
     <value>맑은 고딕, 8.25pt</value>
   </data>
@@ -415,7 +382,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lEffects.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="bBack.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -474,6 +441,36 @@
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lMessage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>맑은 고딕, 8.25pt</value>
+  </data>
+  <data name="lMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 120</value>
+  </data>
+  <data name="lMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 31</value>
+  </data>
+  <data name="lMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lMessage.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;lMessage.Name" xml:space="preserve">
+    <value>lMessage</value>
+  </data>
+  <data name="&gt;&gt;lMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lMessage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lMessage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -484,7 +481,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>314, 143</value>
+    <value>314, 153</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>맑은 고딕, 9pt</value>
@@ -625,6 +622,9 @@
         rEEAAKxBAACsQQAArEEAAKxBAACsQf//rEE=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
@@ -636,12 +636,6 @@
   </data>
   <data name="&gt;&gt;tiCheckAlert.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lMessage.Name" xml:space="preserve">
-    <value>lMessage</value>
-  </data>
-  <data name="&gt;&gt;lMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bBack.Name" xml:space="preserve">
     <value>bBack</value>

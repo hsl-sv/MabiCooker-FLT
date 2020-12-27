@@ -105,6 +105,13 @@ namespace MabiCooker2
             
             try
             {
+                // potentional 1 pixel error
+                if ((iBufferRemap[0] + iBufferRemap[1] + iBufferRemap[2]) < bar_width)
+                {
+                    pbStuffThree.Location = new Point(pbStuffThree.Location.X - 1, 0);
+                    iBufferRemap[2]++;
+                }
+
                 pbStuffThree.Width = iBufferRemap[2];
                 tooltip.SetToolTip(pbStuffThree, String.Format("{0} ({1})", StuffName[2], percentage(iBuffer[2], 100)));
             }

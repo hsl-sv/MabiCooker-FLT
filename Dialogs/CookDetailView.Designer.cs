@@ -39,16 +39,14 @@
             this.lStuffOne = new System.Windows.Forms.LinkLabel();
             this.lRank = new System.Windows.Forms.Label();
             this.tiCheckAlert = new System.Windows.Forms.Timer(this.components);
-            this.pAlertShowing = new System.Windows.Forms.StatusStrip();
-            this.lMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.lEffects = new System.Windows.Forms.RichTextBox();
             this.bBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bDisplayRatio = new System.Windows.Forms.ToolStripButton();
             this.bModFav = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.lMessage = new System.Windows.Forms.Label();
             this.pDisplayInfo.SuspendLayout();
-            this.pAlertShowing.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,18 +127,6 @@
             this.tiCheckAlert.Interval = 3000;
             this.tiCheckAlert.Tick += new System.EventHandler(this.tiCheckAlert_Tick);
             // 
-            // pAlertShowing
-            // 
-            this.pAlertShowing.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lMessage});
-            resources.ApplyResources(this.pAlertShowing, "pAlertShowing");
-            this.pAlertShowing.Name = "pAlertShowing";
-            // 
-            // lMessage
-            // 
-            this.lMessage.Name = "lMessage";
-            resources.ApplyResources(this.lMessage, "lMessage");
-            // 
             // lEffects
             // 
             this.lEffects.BackColor = System.Drawing.SystemColors.Info;
@@ -197,12 +183,18 @@
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
+            // lMessage
+            // 
+            resources.ApplyResources(this.lMessage, "lMessage");
+            this.lMessage.Name = "lMessage";
+            this.lMessage.UseCompatibleTextRendering = true;
+            // 
             // CookDetailView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lMessage);
             this.Controls.Add(this.lEffects);
-            this.Controls.Add(this.pAlertShowing);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pDisplayInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -211,8 +203,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CookDetailView_FormClosed);
             this.pDisplayInfo.ResumeLayout(false);
             this.pDisplayInfo.PerformLayout();
-            this.pAlertShowing.ResumeLayout(false);
-            this.pAlertShowing.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -231,13 +221,12 @@
         private System.Windows.Forms.Label lStuffThreePrice;
         private System.Windows.Forms.Label lStuffTwoPrice;
         private System.Windows.Forms.Label lStuffOnePrice;
-        private System.Windows.Forms.StatusStrip pAlertShowing;
         private System.Windows.Forms.RichTextBox lEffects;
-        private System.Windows.Forms.ToolStripStatusLabel lMessage;
         private System.Windows.Forms.ToolStripButton bBack;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton bDisplayRatio;
         private System.Windows.Forms.ToolStripButton bModFav;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.Label lMessage;
     }
 }
