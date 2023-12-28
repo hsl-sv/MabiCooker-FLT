@@ -25,7 +25,7 @@ namespace MabiCooker2
         private ToolTip tooltip = new ToolTip();
 
         private int initial_height;
-        private int bar_width = 232;
+        private int bar_width = 243; // 232 -> 243 UI Patch
 
         public CookRatioView(MabiCooker Main, ListBox FavView)
         {

@@ -181,7 +181,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="pbStuffThree.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 8</value>
+    <value>87, 8</value>
   </data>
   <data name="pbStuffThree.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
@@ -458,9 +458,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>맑은 고딕, 8.25pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
